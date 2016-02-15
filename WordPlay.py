@@ -23,8 +23,17 @@ def Menu():
 
 def getWord():
 	Word = str(input("Enter your word: "))
+	Word = Word.lower()
 	return Word
 	
+def CheckLetterOccurences(Word):
+	pass
+
+def CheckIsPalindrome(Word):
+	pass
+
+def GenerateAnagram(Word):
+	pass
 
 def main():
 	InputWord = ""
@@ -32,6 +41,7 @@ def main():
 	while(choice != 5):
 		if(choice == 1):
 			InputWord = getWord()
+			print("Your word was " + InputWord)
 		elif(choice == 2):
 			CheckLetterOccurences(InputWord)
 		elif(choice == 3):
