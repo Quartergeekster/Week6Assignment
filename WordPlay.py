@@ -2,17 +2,17 @@
 ##Word analysing program by Robert Roe
 ##150409241
 
-import OS
+import os
 import sys
 import random
 
 def Menu():
 	print ("""\t\tWelcome to Word Play
-		\n\n\tSelect an option:\n
-		1. Enter Word\n
-		2. Check letter occurences\n
-		3. Is Palindrome?\n
-		4. Anagram\n
+		\n\tSelect an option:
+		1. Enter Word
+		2. Check letter occurences
+		3. Is Palindrome?
+		4. Anagram
 		5. Quit\n\n""")
 	try:
 		choice = int(input("Enter choice: "))
