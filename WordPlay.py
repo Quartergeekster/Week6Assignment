@@ -31,14 +31,9 @@ def SplitWord(Word):
 	return WordList
 
 def CheckLetterOccurences(Word, WordList):
-	while(len(WordList)!= 0):
-		for i in range(0, len(WordList)-1):
-			CharToRemove = WordList[0]
-			Count = 0
-			if(WordList[i] == CharToRemove):
-				print("Match Found for " + CharToRemove)
-				Count+=1
-				WordList.pop(i)
+        pass
+
+
 
 def CheckIsPalindrome(Word, WordList):
 	    IsPalindrome = True
