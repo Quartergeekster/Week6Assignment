@@ -34,16 +34,17 @@ def CheckLetterOccurences(Word):
 	pass
 
 def CheckIsPalindrome(Word, WordList):
-	IsPalindrome = True
-	N = len(WordList)
-	while(IsPalindrome):
-		for i in range(0,int((N/2)), 1):
-			if(Word[i] == Word([N-i]-1)):
-				IsPalindrome = True
-			else:
-				IsPalindrome = False
-	if(IsPalindrome):
-		print(Word + "is a palindrome")
+        IsPalindrome = True
+        N = len(WordList)
+        for i in range(0,int((N/2)), 1):
+                if(Word[i] == Word[N-i-1]):
+                        IsPalindrome = True
+                else:
+                        IsPalindrome = False
+        if(IsPalindrome):
+                print(Word + " is a palindrome")
+        else:
+                print(Word + " is not a palindrome")
 
 def GenerateAnagram(Word):
 	pass
