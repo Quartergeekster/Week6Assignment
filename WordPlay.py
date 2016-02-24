@@ -31,8 +31,10 @@ def SplitWord(Word):
 	return WordList
 
 def CheckLetterOccurences(Word, WordList):
-        pass
-
+	for i in range(0, len(WordList)):
+		LetterCount = Word.count(WordList[i])
+		print(WordList[i] + " occurs " + str(LetterCount) + " times")
+			
 
 
 def CheckIsPalindrome(Word, WordList):
