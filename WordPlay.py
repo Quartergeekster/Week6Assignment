@@ -31,11 +31,12 @@ def SplitWord(Word):
 	return WordList
 
 def CheckLetterOccurences(Word, WordList):
+	_LetterToFind = str(input("\nEnter a letter to find: "))
+	_Counter = 0
 	for i in range(0, len(WordList)):
-		LetterCount = Word.count(WordList[i])
-		print(WordList[i] + " occurs " + str(LetterCount) + " times")
-
-
+		if(_LetterToFind == WordList[i]):
+			_Counter +=1
+	print(_LetterToFind + " occurs " + str(_Counter) + " time(s)")
 
 def CheckIsPalindrome(Word, WordList):
 	IsPalindrome = True
@@ -52,14 +53,18 @@ def CheckIsPalindrome(Word, WordList):
 
 def CheckAnagram(Word1, WordList):
 	print("Enter a word to compare to your original")
-	Word2 = getWord()
-	WordList2 = SplitWord(Word2)
-	WordList.sort()
-	WordList2.sort()
-	if(WordList == WordList2):
-		print(Word1 + " is an anagram of " + Word2)
+	_Word2 = getWord()
+	_WordList2 = SplitWord(_Word2)
+	if(len(WordList) == len(_WordList2)):##Could be anagram
+		for i in range(0, len(WordList)):
+			if(WordList[i] in _WordList2):
+				_WordList2.remove(WordList[i])
+		if(len(_WordList2)==0):
+			print(Word1 + " is an anagram of " + _Word2 + "\n")
+		else:
+			print(Word1 + " is not an anagram of " + _Word2 + "\n")
 	else:
-		print(Word1 + " is not an anagram of " + Word2)
+		print(Word1 + " is not an anagram of " + _Word2)
 		print("")
 
 
