@@ -25,7 +25,7 @@ def getWord():
 	Word = str(input("Enter your word: "))
 	Word = Word.lower()
 	return Word
-	
+
 def SplitWord(Word):
 	WordList = list(Word)
 	return WordList
@@ -34,24 +34,34 @@ def CheckLetterOccurences(Word, WordList):
 	for i in range(0, len(WordList)):
 		LetterCount = Word.count(WordList[i])
 		print(WordList[i] + " occurs " + str(LetterCount) + " times")
-			
+
 
 
 def CheckIsPalindrome(Word, WordList):
-	    IsPalindrome = True
-	    N = len(WordList)
-	    for i in range(0,int((N/2)), 1):
-		    if(Word[i] == Word[N-i-1]):
-			    IsPalindrome = True
-		    else:
-			    IsPalindrome = False
-	    if(IsPalindrome):
-		    print(Word + " is a palindrome")
-	    else:
-		    print(Word + " is not a palindrome")
+	IsPalindrome = True
+	N = len(WordList)
+	for i in range(0,int((N/2)), 1):
+		if(Word[i] == Word[N-i-1]):
+			IsPalindrome = True
+		else:
+			IsPalindrome = False
+			if(IsPalindrome):
+				print(Word + " is a palindrome")
+			else:
+				print(Word + " is not a palindrome")
 
-def GenerateAnagram(Word, WordList):
-	pass
+def CheckAnagram(Word1, WordList):
+	print("Enter a word to compare to your original")
+	Word2 = getWord()
+	WordList2 = SplitWord(Word2)
+	WordList.sort()
+	WordList2.sort()
+	if(WordList == WordList2):
+		print(Word1 + " is an anagram of " + Word2)
+	else:
+		print(Word1 + " is not an anagram of " + Word2)
+		print("")
+
 
 def main():
 	InputWord = ""
@@ -67,13 +77,13 @@ def main():
 			elif(choice == 3):
 				CheckIsPalindrome(InputWord, WordList)
 			elif(choice == 4):
-				GenerateAnagram(InputWord, WordList)
+				CheckAnagram(InputWord, WordList)
 			else:
 				print("That was not an option.")
 			choice = Menu()
 	except UnboundLocalError:
 		print("Word has not been assigned")
 		choice = Menu()
-	sys.exit()
+		sys.exit()
 
 main()
