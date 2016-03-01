@@ -67,6 +67,9 @@ def CheckAnagram(Word1, WordList):
 		print(Word1 + " is not an anagram of " + _Word2)
 		print("")
 
+	##This could also be done by programming a sort (Most likely bubble or insertion) in as a function, comparing the 2 sorted lists
+	##If the 2 sorted lists are equal, then the anagram is true
+
 
 def main():
 	InputWord = ""
