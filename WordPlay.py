@@ -70,7 +70,7 @@ def CheckAnagram(Word1, WordList):
 
 def main():
 	InputWord = ""
-	if(InputWord == ""):
+	if(InputWord == ""): ##Forces user to input word at start
 		print("\t\tWelcome to WordPlay\n")
 		InputWord = getWord()
 		WordList = SplitWord(InputWord)
